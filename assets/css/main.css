@@ -390,65 +390,56 @@ p {
 }
 
 .main-header .container {
-  max-width: 1520px;
+  max-width: 1560px;
   width: 100%;
-  padding-inline: clamp(1.25rem, 3.5vw, 3rem);
+  padding-inline: clamp(1.5rem, 3.5vw, 3.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  gap: clamp(1.5rem, 3vw, 3.5rem);
 }
 
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 1.15rem;
+  gap: 1rem;
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .header-brand img {
-  height: 56px;
+  height: 48px;
   width: auto;
   object-fit: contain;
   transition: height var(--transition-base);
 }
 
 .main-header.scrolled .header-brand img {
-  height: 48px;
+  height: 42px;
 }
 
 .header-brand-text {
+  border-left: 1.5px solid var(--border-medium);
+  padding-left: 0.85rem;
   display: flex;
   flex-direction: column;
 }
 
-.header-brand-name {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--color-navy-900);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-}
-
 .header-brand-sub {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   color: var(--color-slate-500);
-  font-weight: 600;
-  margin-top: 0.2rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-/* Nav Menu */
+/* Nav Menu (Centered with Generous Breathing Room on Both Sides) */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: clamp(1.25rem, 2vw, 2.5rem);
-  margin-left: auto;
-  margin-right: 1.5rem;
+  gap: clamp(1.25rem, 1.8vw, 2.25rem);
+  margin-inline: auto; /* Perfectly centers links with equal, generous whitespace on both sides */
 }
 
 .nav-link {
@@ -485,7 +476,6 @@ p {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
   flex-shrink: 0;
 }
 
