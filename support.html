@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Support Savannah River Academy through the SRA Annual Fund, Georgia GOAL Tax Credit Program, Parent Service Organization (PSO), and corporate matching gifts in Grovetown, GA.">
+  <title>Support SRA | Annual Fund, Georgia GOAL & PSO | Savannah River Academy</title>
+  
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/main.css">
+  
+  <style>
+    .giving-levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-block: 2.5rem;
+    }
+    .giving-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-base);
+    }
+    .giving-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(212, 154, 61, 0.4);
+    }
+    .giving-card.highlight {
+      border: 2px solid var(--color-gold-500);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, var(--color-gold-50) 100%);
+    }
+    .giving-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold-600);
+      margin-bottom: 0.5rem;
+    }
+    .giving-amount {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--color-navy-900);
+      margin-bottom: 0.75rem;
+    }
+    .pso-board-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-block: 2rem;
+    }
+    .pso-member-card {
+      background: var(--bg-surface);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      text-align: center;
+    }
+    .pso-role {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-gold-600);
+      margin-bottom: 0.35rem;
+    }
+    .pso-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-navy-900);
+    }
+    .tax-box {
+      background: linear-gradient(135deg, var(--color-navy-900), var(--color-navy-800));
+      color: #fff;
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      margin-block: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP UTILITY BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-contact">
+        <span>📍 213 S Old Belair Rd, Grovetown, GA 30813</span>
+        <span>📞 <a href="tel:7068637773">(706) 863-7773</a></span>
+        <span class="top-bar-tag">★ 501(c)(3) Non-Profit • Tax ID: 82-3287890</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="support.html#annual-fund">Annual Fund</a>
+        <a href="support.html#goal">Georgia GOAL</a>
+        <a href="support.html#pso">Parent Service Org (PSO)</a>
+        <a href="https://logins2.renweb.com/logins/ParentsWeb-Login.aspx" target="_blank" rel="noopener">Family Portal ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN STICKY NAVIGATION -->
+  <header class="main-header">
+    <div class="container">
+      <a href="index.html" class="header-brand" aria-label="Savannah River Academy Home">
+        <img src="assets/images/logo.png" alt="Savannah River Academy Logo">
+        <div class="header-brand-text">
+          <span class="header-brand-name">Savannah River Academy</span>
+          <span class="header-brand-sub">Grovetown, Georgia • Est. 2018</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About SRA</a>
+        <a href="academics.html" class="nav-link">Academics</a>
+        <a href="admissions.html" class="nav-link">Admissions & Tuition</a>
+        <a href="campus-life.html" class="nav-link">Campus Life</a>
+        <a href="support.html" class="nav-link active">Support SRA</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#annual-fund" class="btn btn-sm btn-outline-navy">Give Today</a>
+        <button class="btn btn-sm btn-primary btn-tour-trigger">Schedule a Tour</button>
+        <button class="menu-toggle" id="drawer-open" aria-label="Open Navigation Menu" aria-controls="drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ACCESSIBLE MOBILE DRAWER -->
+  <dialog class="Drawer" id="drawer" aria-label="Mobile Navigation">
+    <div class="Drawer-sheet">
+      <div class="Drawer-header">
+        <div class="header-brand-text">
+          <span class="header-brand-name" style="color: #fff;">Savannah River Academy</span>
+          <span class="header-brand-sub" style="color: var(--color-gold-400);">Pre-K through 8th Grade</span>
+        </div>
+        <button class="Drawer-close" id="drawer-close" aria-label="Close Navigation Menu">✕</button>
+      </div>
+      <nav class="Drawer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About SRA &amp; Faculty</a>
+        <a href="academics.html">Academics &amp; Dyslexia Center</a>
+        <a href="admissions.html">Admissions &amp; Tuition</a>
+        <a href="campus-life.html">Campus Life &amp; Athletics</a>
+        <a href="support.html">Support SRA &amp; Annual Fund</a>
+        <a href="support.html#goal">Georgia GOAL Tax Credit</a>
+        <a href="support.html#pso">Parent Service Organization (PSO)</a>
+        <a href="assets/docs/SRA-Calendar-2026-2027.pdf" target="_blank">2026–2027 Calendar (PDF)</a>
+      </nav>
+      <div class="Drawer-footer">
+        <a href="#annual-fund" class="btn btn-primary" style="width: 100%;">Donate to Annual Fund</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- HERO -->
+  <section style="background: linear-gradient(135deg, var(--color-navy-900), var(--color-navy-800)); color: #fff; padding-block: 5.5rem 4.5rem; text-align: center;">
+    <div class="container" style="max-width: 860px;">
+      <span class="section-badge" style="background: rgba(212,154,61,0.2); color: var(--color-gold-400); margin-bottom: 1rem;">Philanthropy &amp; Community Partnership</span>
+      <h1 style="color: #fff; margin-bottom: 1.25rem;">Investing in Extraordinary Minds &amp; Inspired Futures</h1>
+      <p style="color: rgba(255,255,255,0.85); font-size: 1.2rem; line-height: 1.7;">
+        As a 501(c)(3) independent non-profit school, Savannah River Academy relies on the generosity of parents, grandparents, alumni, and community partners to bridge the gap between tuition and the full cost of an individualized, 8:1 education.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+        <a href="#annual-fund" class="btn btn-primary">The SRA Annual Fund</a>
+        <a href="#goal" class="btn btn-outline-white">Georgia GOAL Tax Credit</a>
+        <a href="#pso" class="btn btn-outline-white">Parent Service Org (PSO)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. THE SRA ANNUAL FUND -->
+  <section class="section-padding" id="annual-fund">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-navy">Our Greatest Priority</span>
+        <h2>The Savannah River Academy Annual Fund</h2>
+        <p class="lead">
+          Like all premier independent schools, tuition alone does not cover the complete operating cost of maintaining an 8:1 student-to-teacher ratio, master faculty, specialized Orton-Gillingham reading specialists, and cutting-edge laboratory science.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; margin-bottom: 3.5rem;">
+        <div>
+          <h3 style="margin-bottom: 1.25rem;">Where Your Gift Makes an Immediate Impact</h3>
+          <p style="margin-bottom: 1rem;">
+            Annual Fund gifts are 100% tax-deductible and are put to work directly during the current academic year. Your contribution directly funds:
+          </p>
+          <div class="program-feature-list">
+            <div class="program-feature-item" style="color: var(--color-slate-800);">
+              <span class="feature-check" style="color: var(--color-gold-600);">✓</span>
+              <span><strong>Faculty Excellence &amp; Certifications</strong>: Advanced training in the Science of Reading, Orton-Gillingham methodologies, and Singapore Math pedagogy.</span>
+            </div>
+            <div class="program-feature-item" style="color: var(--color-slate-800);">
+              <span class="feature-check" style="color: var(--color-gold-600);">✓</span>
+              <span><strong>Classroom &amp; STEAM Upgrades</strong>: Robotics kits, 3D printing equipment, science laboratory glassware, and multi-sensory math manipulatives.</span>
+            </div>
+            <div class="program-feature-item" style="color: var(--color-slate-800);">
+              <span class="feature-check" style="color: var(--color-gold-600);">✓</span>
+              <span><strong>Need-Based Tuition Assistance</strong>: Enabling deserving students from diverse socioeconomic backgrounds to experience the life-changing gift of SRA.</span>
+            </div>
+            <div class="program-feature-item" style="color: var(--color-slate-800);">
+              <span class="feature-check" style="color: var(--color-gold-600);">✓</span>
+              <span><strong>Nature Classrooms &amp; Campus Safety</strong>: Enhancing outdoor learning pavilions, nature discovery trails, and security infrastructure.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-surface); padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border-light); box-shadow: var(--shadow-md);">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+            <img src="assets/images/candid-seal.png" alt="Candid Gold Seal 2024" style="height: 52px;">
+            <div>
+              <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 0;">Recognized Transparency</h4>
+              <span style="font-size: 0.85rem; color: var(--color-slate-500);">Candid Gold Seal of Transparency 2024</span>
+            </div>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--color-slate-600); margin-bottom: 1.5rem;">
+            Savannah River Academy is a registered 501(c)(3) organization (Tax ID: <strong>82-3287890</strong>). All charitable contributions are tax-deductible to the fullest extent permitted by law.
+          </p>
+          <div style="background: var(--color-cream-200); padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            💼 <strong>Double Your Impact</strong>: Many employers offer matching gift programs that match your donation dollar-for-dollar. Check with your company’s HR office.
+          </div>
+          <a href="mailto:info@savannahriveracademy.org?subject=Annual%20Fund%20Donation" class="btn btn-primary" style="width: 100%;">Donate to the Annual Fund</a>
+        </div>
+      </div>
+
+      <!-- Giving Levels & Recognition Grid -->
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.85rem;">Annual Giving Levels &amp; Recognition</h3>
+        <p style="color: var(--color-slate-600);">Every gift, no matter the size, directly strengthens our classrooms and champions our teachers.</p>
+      </div>
+
+      <div class="giving-levels-grid">
+        <div class="giving-card highlight">
+          <div>
+            <span class="giving-badge">Visionary Leadership</span>
+            <div class="giving-amount">$10,000 – $24,999</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem;">Founders Circle</h4>
+            <p style="font-size: 0.9rem; color: var(--color-slate-600); line-height: 1.6;">
+              Transformational leadership. Donors are recognized on the permanent campus honor wall and invited to the private Head of School &amp; Board of Trustees dinner.
+            </p>
+          </div>
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--color-gold-600);">Permanent Campus Honor Wall</div>
+        </div>
+
+        <div class="giving-card highlight">
+          <div>
+            <span class="giving-badge">Major Benefactors</span>
+            <div class="giving-amount">$5,000 – $9,999</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem;">Benefactor Society</h4>
+            <p style="font-size: 0.9rem; color: var(--color-slate-600); line-height: 1.6;">
+              Funds major lab equipment and full annual reading specialist certifications. Includes Head of School donor recognition dinner invitation.
+            </p>
+          </div>
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--color-gold-600);">Donor Dinner &amp; Annual Report</div>
+        </div>
+
+        <div class="giving-card">
+          <div>
+            <span class="giving-badge">Executive Level</span>
+            <div class="giving-amount">$3,000 – $4,999</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem;">Leadership Circle</h4>
+            <p style="font-size: 0.9rem; color: var(--color-slate-600); line-height: 1.6;">
+              Underwrites classroom technology, field studies, and STEAM curriculum. Includes invitation to annual donor reception.
+            </p>
+          </div>
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--color-navy-800);">Annual Reception Invitation</div>
+        </div>
+
+        <div class="giving-card">
+          <div>
+            <span class="giving-badge">Sustaining Tier</span>
+            <div class="giving-amount">$1,500 – $2,999</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem;">Provider Club</h4>
+            <p style="font-size: 0.9rem; color: var(--color-slate-600); line-height: 1.6;">
+              Provides comprehensive student curriculum packages, literacy libraries, and multi-sensory math manipulatives.
+            </p>
+          </div>
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--color-navy-800);">Honor Roll Listing</div>
+        </div>
+
+        <div class="giving-card">
+          <div>
+            <span class="giving-badge">Community Tier</span>
+            <div class="giving-amount">$500 – $1,499</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem;">Supporters Club</h4>
+            <p style="font-size: 0.9rem; color: var(--color-slate-600); line-height: 1.6;">
+              Supports physical education gear, musical instruments, art supplies, and classroom library books.
+            </p>
+          </div>
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--color-navy-800);">Honor Roll Listing</div>
+        </div>
+
+        <div class="giving-card">
+          <div>
+            <span class="giving-badge">Family &amp; Alumni</span>
+            <div class="giving-amount">$100 – $499</div>
+            <h4 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem;">Eagles Club &amp; Friends</h4>
+            <p style="font-size: 0.9rem; color: var(--color-slate-600); line-height: 1.6;">
+              Demonstrates 100% family participation, which is a vital metric required by major educational grant foundations.
+            </p>
+          </div>
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--color-navy-800);">Honor Roll Listing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. GEORGIA GOAL TAX CREDIT PROGRAM (DONOR FOCUS) -->
+  <section class="section-padding" style="background-color: var(--color-cream-200);" id="goal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-green">Zero-Cost Tax Redirection</span>
+        <h2>Georgia GOAL Scholarship Program for Taxpayers</h2>
+        <p class="lead">
+          Redirect Georgia state income taxes that you already owe directly into scholarships for Savannah River Academy students. You receive a <strong>100% dollar-for-dollar tax credit</strong> on your Georgia state tax return!
+        </p>
+      </div>
+
+      <div class="tax-box">
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+              <img src="assets/images/ga-goal-logo.png" alt="Georgia GOAL Scholarship Logo" style="height: 54px; background: #fff; padding: 6px; border-radius: var(--radius-sm);">
+              <span style="font-size: 1.1rem; font-weight: 700; color: var(--color-gold-400);">Official State-Approved SSO Partner</span>
+            </div>
+            
+            <h3 style="color: #fff; font-size: 2rem; margin-bottom: 1rem;">Turn Your Georgia Tax Dollars Into SRA Tuition Aid</h3>
+            <p style="color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 1.25rem;">
+              <strong>Important Note:</strong> Participation in the Georgia GOAL program is <em>not an additional charitable expense</em>—it is a dollar-for-dollar redirection of tax liability you already owe to the State of Georgia. Instead of sending those tax dollars to Atlanta, you tell Georgia to send them directly to Savannah River Academy!
+            </p>
+            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 2rem;">
+              In addition to receiving a 100% Georgia income tax credit, business owners and individuals who itemize can often claim federal charitable tax deductions as well.
+            </p>
+
+            <a href="https://www.goalscholarship.org" target="_blank" rel="noopener" class="btn btn-primary">Apply Online at GoalScholarship.org ↗</a>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.06); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.12);">
+            <h4 style="color: var(--color-gold-400); font-family: var(--font-sans); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.25rem;">2026 Georgia Tax Credit Limits</h4>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.6rem;">
+                <span>Single Filer:</span>
+                <strong style="color: #fff;">Up to $2,500</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.6rem;">
+                <span>Married Filing Jointly:</span>
+                <strong style="color: #fff;">Up to $5,000</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.6rem;">
+                <span>Pass-Through Business Owners:</span>
+                <strong style="color: #fff;">Up to $25,000</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding-bottom: 0.6rem;">
+                <span>C-Corporations &amp; Trusts:</span>
+                <strong style="color: #fff;">Up to 75% of GA Tax Liability</strong>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; font-size: 0.825rem; color: rgba(255,255,255,0.65); line-height: 1.5;">
+              * Applications open beginning June 1st and are submitted to the Georgia Department of Revenue (DOR) on the first business day of January.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Simple Steps to Participate -->
+      <div style="margin-top: 3.5rem;">
+        <h3 style="text-align: center; margin-bottom: 2rem;">How Simple Is It to Participate?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <div style="background: var(--bg-surface); padding: 1.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <div style="font-size: 1.85rem; font-weight: 700; color: var(--color-gold-500); font-family: var(--font-serif); margin-bottom: 0.5rem;">01</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.05rem; margin-bottom: 0.5rem;">Apply Online in 3 Mins</h4>
+            <p style="font-size: 0.875rem; color: var(--color-slate-600);">Complete the short form at goalscholarship.org naming Savannah River Academy as your recipient school.</p>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 1.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <div style="font-size: 1.85rem; font-weight: 700; color: var(--color-gold-500); font-family: var(--font-serif); margin-bottom: 0.5rem;">02</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.05rem; margin-bottom: 0.5rem;">DOR Approval</h4>
+            <p style="font-size: 0.875rem; color: var(--color-slate-600);">GOAL submits to the Georgia Dept of Revenue in January. You are notified of your approved credit amount.</p>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 1.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <div style="font-size: 1.85rem; font-weight: 700; color: var(--color-gold-500); font-family: var(--font-serif); margin-bottom: 0.5rem;">03</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.05rem; margin-bottom: 0.5rem;">Remit Payment</h4>
+            <p style="font-size: 0.875rem; color: var(--color-slate-600);">Pay GOAL by check, credit card, or ACH within 60 days of approval (by mid-March).</p>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 1.75rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <div style="font-size: 1.85rem; font-weight: 700; color: var(--color-gold-500); font-family: var(--font-serif); margin-bottom: 0.5rem;">04</div>
+            <h4 style="font-family: var(--font-sans); font-size: 1.05rem; margin-bottom: 0.5rem;">Claim Your 100% Credit</h4>
+            <p style="font-size: 0.875rem; color: var(--color-slate-600);">GOAL sends your official Form IT-QEE-SSO1 tax receipt to claim the 100% credit on your Georgia state tax return.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PARENT SERVICE ORGANIZATION (PSO) -->
+  <section class="section-padding" id="pso">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-navy">Family Partnership</span>
+        <h2>Parent Service Organization (PSO)</h2>
+        <p class="lead">
+          At Savannah River Academy, we are not just a school—we are a tight-knit family of dedicated parents and educators working hand-in-hand to enrich our children’s lives.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; align-items: center; margin-bottom: 3.5rem;">
+        <div>
+          <h3 style="margin-bottom: 1.25rem;">Our Mission &amp; Purpose</h3>
+          <p style="margin-bottom: 1rem;">
+            The PSO develops an authentic partnership between school leadership and families by fostering parent involvement, organizing campus-wide celebrations, executing teacher appreciation weeks, and directing targeted fundraisers that directly improve student life.
+          </p>
+          <p style="margin-bottom: 1.5rem;">
+            <strong>Every SRA family is automatically a member of the PSO.</strong> Whether you have one hour a month or one day a week, your time, passion, and unique talents are welcomed and celebrated.
+          </p>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="mailto:pso.sra@gmail.com" class="btn btn-primary">Sign Up for a PSO Committee</a>
+            <a href="mailto:pso.sra@gmail.com" class="btn btn-outline-navy">Contact PSO Board</a>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-sm);">
+          <h4 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-navy-900); margin-bottom: 0.75rem;">Annual PSO Initiatives</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem; color: var(--color-slate-700);">
+            <li>🎉 <strong>Family Fall Festival &amp; Spring Gala</strong></li>
+            <li>🍎 <strong>Faculty &amp; Staff Appreciation Weeks</strong></li>
+            <li>📚 <strong>Scholastic Book Fairs &amp; Author Visits</strong></li>
+            <li>👕 <strong>Used Uniform Closet &amp; Spirit Swag Store</strong></li>
+            <li>🍕 <strong>Spirit Nights with Local Restaurants</strong></li>
+            <li>🌿 <strong>Campus Beautification &amp; Garden Days</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Executive Board Roster -->
+      <div class="section-header" style="margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.6rem;">2026–2027 PSO Executive Board</h3>
+        <p style="color: var(--color-slate-600);">Meet the parent leaders serving our school community.</p>
+      </div>
+
+      <div class="pso-board-grid">
+        <div class="pso-member-card">
+          <div class="pso-role">President</div>
+          <div class="pso-name">Caro Plunkett</div>
+          <span style="font-size: 0.8rem; color: var(--color-slate-500); margin-top: 0.25rem; display: block;">&amp; Nest Representative</span>
+        </div>
+
+        <div class="pso-member-card">
+          <div class="pso-role">Vice President</div>
+          <div class="pso-name">Jenny Miller</div>
+          <span style="font-size: 0.8rem; color: var(--color-slate-500); margin-top: 0.25rem; display: block;">&amp; Primary Representative</span>
+        </div>
+
+        <div class="pso-member-card">
+          <div class="pso-role">Middle School Rep</div>
+          <div class="pso-name">Jason Ross</div>
+          <span style="font-size: 0.8rem; color: var(--color-slate-500); margin-top: 0.25rem; display: block;">Student Life Liaison</span>
+        </div>
+
+        <div class="pso-member-card">
+          <div class="pso-role">Secretary</div>
+          <div class="pso-name">Uli Jahns</div>
+          <span style="font-size: 0.8rem; color: var(--color-slate-500); margin-top: 0.25rem; display: block;">Communications &amp; Notes</span>
+        </div>
+
+        <div class="pso-member-card">
+          <div class="pso-role">Treasurer</div>
+          <div class="pso-name">Emily Unger</div>
+          <span style="font-size: 0.8rem; color: var(--color-slate-500); margin-top: 0.25rem; display: block;">Finance &amp; Event Budgets</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WAYS TO GIVE (DETAILS & TAX INFO) -->
+  <section class="section-padding" style="background-color: var(--color-cream-100);" id="ways-to-give">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-green">Giving Options</span>
+        <h2>Convenient Ways of Giving to SRA</h2>
+        <p class="lead">We offer multiple flexible giving methods to accommodate personal financial planning and corporate philanthropic goals.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">💳</div>
+          <h3>Online Credit Card or ACH</h3>
+          <p>Make a secure one-time or recurring monthly contribution to the Annual Fund directly via our verified school payment portal.</p>
+          <a href="mailto:info@savannahriveracademy.org?subject=Online%20Giving" class="pillar-link">Inquire Online Giving →</a>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: var(--color-forest-100); color: var(--color-forest-600);">📬</div>
+          <h3>Mail a Check</h3>
+          <p>
+            Make checks payable to <strong>Savannah River Academy</strong> and mail to:<br>
+            <em>213 South Old Belair Road<br>Grovetown, GA 30813</em>
+          </p>
+          <span style="font-size: 0.85rem; color: var(--color-slate-500);">Memo: SRA Annual Fund</span>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: var(--color-navy-100); color: var(--color-navy-700);">📈</div>
+          <h3>Stocks &amp; Appreciated Securities</h3>
+          <p>Gifting appreciated stocks or securities allows you to avoid capital gains taxes while receiving a full charitable tax deduction for fair market value.</p>
+          <a href="mailto:info@savannahriveracademy.org?subject=Stock%20Transfer" class="pillar-link">Request Broker DTC Info →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/footer_logo.png" alt="Savannah River Academy Crest">
+          <p>A premier non-profit independent day school cultivating curious, confident, and compassionate learners in Grovetown, GA.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About SRA</a>
+            <a href="academics.html">Academics</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="campus-life.html">Campus Life</a>
+            <a href="support.html">Support SRA</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Support &amp; Giving</h4>
+          <div class="footer-links">
+            <a href="#annual-fund">The SRA Annual Fund</a>
+            <a href="#goal">Georgia GOAL Tax Credit</a>
+            <a href="#pso">Parent Service Organization</a>
+            <a href="#ways-to-give">Ways to Give &amp; Stocks</a>
+            <a href="assets/docs/Family-Handbook.pdf" target="_blank">Family Handbook (PDF)</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Office</h4>
+          <div style="font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.7);">
+            213 S Old Belair Rd<br>Grovetown, GA 30813<br>
+            📞 (706) 863-7773<br>
+            ✉️ info@savannahriveracademy.org
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Savannah River Academy. All Rights Reserved. • Tax ID: 82-3287890</div>
+        <div>Accredited by Cognia &amp; GADOE • Candid Gold 2024 Seal</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOUR MODAL -->
+  <dialog class="modal-dialog" id="tour-modal" aria-labelledby="modal-heading">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="section-badge" style="background: rgba(212,154,61,0.25); color: var(--color-gold-400); margin-bottom: 0.5rem;">Admissions Office</span>
+          <h3 id="modal-heading">Schedule a Private Campus Tour</h3>
+          <p>Experience our 8:1 classrooms, meet our teachers, and see learning in action.</p>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Tour Request Form">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="tour-form">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="tour-name" class="form-label">Parent / Guardian Name *</label>
+              <input type="text" id="tour-name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="tour-email" class="form-label">Email Address *</label>
+              <input type="email" id="tour-email" class="form-input" required>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="tour-phone" class="form-label">Phone Number *</label>
+              <input type="tel" id="tour-phone" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="tour-grade" class="form-label">Child's Grade Level *</label>
+              <select id="tour-grade" class="form-select" required>
+                <option value="">Select Grade Level...</option>
+                <option value="nest">The Nest (Pre-K)</option>
+                <option value="k-2">Primary (K–2nd)</option>
+                <option value="3-5">Elementary (3rd–5th)</option>
+                <option value="6-8">Middle School (6th–8th)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Tour Request</button>
+        </form>
+        <div id="tour-success-message" style="display: none; text-align: center; padding: 2rem;">
+          <h3>Thank You!</h3>
+          <p>Our admissions director will contact you promptly to finalize your date.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
