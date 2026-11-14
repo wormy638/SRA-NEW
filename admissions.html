@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admissions, Tuition, and Financial Aid guide for Savannah River Academy in Grovetown, GA. Discover our step-by-step application roadmap, Georgia GOAL scholarships, and tuition calculator.">
+  <title>Admissions & Tuition Guide | Savannah River Academy</title>
+  
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/main.css">
+  
+  <style>
+    .tuition-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      margin-block: 2rem;
+    }
+    .tuition-table th, .tuition-table td {
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .tuition-table th {
+      background-color: var(--color-navy-900);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .tuition-table tr:last-child td {
+      border-bottom: none;
+    }
+    .tuition-table tr:hover td {
+      background-color: var(--color-gold-50);
+    }
+    .roadmap-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-block: 2.5rem;
+    }
+    .roadmap-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-xs);
+      position: relative;
+    }
+    .roadmap-num {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: var(--color-gold-500);
+      color: var(--color-navy-900);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-contact">
+        <span>📍 213 S Old Belair Rd, Grovetown, GA 30813</span>
+        <span>📞 <a href="tel:7068637773">(706) 863-7773</a></span>
+        <span class="top-bar-tag">★ Accredited by Cognia & GADOE</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="admissions.html#tuition">Tuition & Aid</a>
+        <a href="about.html#calendar">School Calendar</a>
+        <a href="https://logins2.renweb.com/logins/ParentsWeb-Login.aspx" target="_blank" rel="noopener">Family Portal ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <a href="index.html" class="header-brand" aria-label="Savannah River Academy Home">
+        <img src="assets/images/logo.png" alt="Savannah River Academy Logo">
+        <div class="header-brand-text">
+          <span class="header-brand-name">Savannah River Academy</span>
+          <span class="header-brand-sub">Grovetown, Georgia • Est. 2018</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About SRA</a>
+        <a href="academics.html" class="nav-link">Academics</a>
+        <a href="admissions.html" class="nav-link active">Admissions & Tuition</a>
+        <a href="campus-life.html" class="nav-link">Campus Life</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-sm btn-primary btn-tour-trigger">Schedule a Tour</button>
+        <button class="menu-toggle" id="drawer-open" aria-label="Open Navigation Menu" aria-controls="drawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <dialog class="Drawer" id="drawer" aria-label="Mobile Navigation">
+    <div class="Drawer-sheet">
+      <div class="Drawer-header">
+        <div class="header-brand-text">
+          <span class="header-brand-name" style="color: #fff;">Savannah River Academy</span>
+          <span class="header-brand-sub" style="color: var(--color-gold-400);">Pre-K through 8th Grade</span>
+        </div>
+        <button class="Drawer-close" id="drawer-close" aria-label="Close Navigation Menu">✕</button>
+      </div>
+      <nav class="Drawer-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About SRA & Faculty</a>
+        <a href="academics.html">Academics & Dyslexia Center</a>
+        <a href="admissions.html">Admissions & Tuition</a>
+        <a href="campus-life.html">Campus Life & Athletics</a>
+        <a href="admissions.html#calculator">Tuition Estimator</a>
+      </nav>
+      <div class="Drawer-footer">
+        <button class="btn btn-primary btn-tour-trigger" style="width: 100%;">Book a Tour</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- HERO -->
+  <section style="background: linear-gradient(135deg, var(--color-navy-900), var(--color-navy-800)); color: #fff; padding-block: 5rem 4rem; text-align: center;">
+    <div class="container" style="max-width: 820px;">
+      <span class="section-badge" style="background: rgba(212,154,61,0.2); color: var(--color-gold-400); margin-bottom: 1rem;">Admissions &amp; Financial Aid</span>
+      <h1 style="color: #fff; margin-bottom: 1.25rem;">An Investment in Your Child’s Lifelong Joy &amp; Potential</h1>
+      <p style="color: rgba(255,255,255,0.85); font-size: 1.2rem; line-height: 1.7;">
+        Discover a transparent, supportive admissions process designed to ensure Savannah River Academy is the perfect developmental fit for your family.
+      </p>
+    </div>
+  </section>
+
+  <!-- 1. ADMISSIONS ROADMAP -->
+  <section class="section-padding" id="roadmap">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-navy">Step-by-Step Guide</span>
+        <h2>Your Journey to Savannah River Academy</h2>
+        <p class="lead">We have streamlined our admissions process to be welcoming, communicative, and transparent at every stage.</p>
+      </div>
+
+      <div class="roadmap-steps">
+        <div class="roadmap-card">
+          <div class="roadmap-num">1</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.5rem;">Schedule a Visit</h4>
+          <p style="font-size: 0.9rem; color: var(--color-slate-600);">Tour our campus during the academic day, observe our 8:1 classrooms, and meet our Head of School.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-num">2</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.5rem;">Apply Online</h4>
+          <p style="font-size: 0.9rem; color: var(--color-slate-600);">Complete our simple online application through the secure FACTS portal and upload school records.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-num">3</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.5rem;">Student Shadow Day</h4>
+          <p style="font-size: 0.9rem; color: var(--color-slate-600);">Your child spends a morning with peers and teachers to experience the joy of SRA firsthand.</p>
+        </div>
+
+        <div class="roadmap-card">
+          <div class="roadmap-num">4</div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 0.5rem;">Enrollment &amp; Aid</h4>
+          <p style="font-size: 0.9rem; color: var(--color-slate-600);">Receive your admissions decision and finalize Georgia GOAL or GSNS scholarship allocations.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 1rem;">
+        <button class="btn btn-primary btn-tour-trigger">Begin Step 1: Schedule Your Tour</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TRANSPARENT TUITION SCHEDULE -->
+  <section class="section-padding" style="background-color: var(--color-cream-200);" id="tuition">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-green">2026–2027 Academic Year</span>
+        <h2>Tuition &amp; Fee Schedule</h2>
+        <p class="lead">All-inclusive academic pricing with no hidden surprise facility fees or mandatory gala ticket requirements.</p>
+      </div>
+
+      <div style="max-width: 900px; margin-inline: auto;">
+        <table class="tuition-table">
+          <thead>
+            <tr>
+              <th>Academic Program</th>
+              <th>Grade Levels</th>
+              <th>Annual Tuition</th>
+              <th>10-Month Plan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>The Nest</strong></td>
+              <td>Pre-Kindergarten (Ages 3 &amp; 4)</td>
+              <td>$9,800</td>
+              <td>$980 / month</td>
+            </tr>
+            <tr>
+              <td><strong>Primary Academy</strong></td>
+              <td>Kindergarten – 5th Grade (8:1 Ratio)</td>
+              <td>$10,400</td>
+              <td>$1,040 / month</td>
+            </tr>
+            <tr>
+              <td><strong>Middle School</strong></td>
+              <td>6th Grade – 8th Grade</td>
+              <td>$10,950</td>
+              <td>$1,095 / month</td>
+            </tr>
+            <tr>
+              <td><strong>Dyslexia Tutoring Program</strong></td>
+              <td>Daily 1-on-1 Certified Orton-Gillingham</td>
+              <td>+$3,800</td>
+              <td>+$380 / month</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Additional Fees & Discounts Note -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+          <div style="background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <h4 style="font-family: var(--font-sans); font-size: 1rem; color: var(--color-navy-900); margin-bottom: 0.5rem;">Registration &amp; Materials</h4>
+            <p style="font-size: 0.875rem; color: var(--color-slate-600);">New student registration fee is $350 (one-time). Comprehensive annual classroom materials, textbooks, and technology fee is $550.</p>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+            <h4 style="font-family: var(--font-sans); font-size: 1rem; color: var(--color-navy-900); margin-bottom: 0.5rem;">Sibling Discount</h4>
+            <p style="font-size: 0.875rem; color: var(--color-slate-600);">Families enrolling two or more children receive a 10% tuition discount applied directly to each additional sibling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. INTERACTIVE TUITION & SCHOLARSHIP CALCULATOR -->
+  <section class="section-padding" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-navy">Interactive Estimator</span>
+        <h2>Estimate Your Net Investment with Georgia Scholarships</h2>
+        <p class="lead">Configure your grade and state scholarship eligibility to see your customized annual and monthly breakdown.</p>
+      </div>
+
+      <div class="tuition-box">
+        <div class="tuition-grid">
+          <!-- Configuration Column -->
+          <div class="tuition-config">
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem;">1. Select Grade Level</h3>
+            
+            <div class="form-group">
+              <div class="tuition-pill-options">
+                <div class="pill-option">
+                  <input type="radio" name="calc-grade" id="grade-nest" value="nest">
+                  <label for="grade-nest" class="pill-label">
+                    <strong>The Nest</strong>
+                    <span style="font-size: 0.8rem; color: var(--color-slate-500);">Pre-K 3/4</span>
+                  </label>
+                </div>
+
+                <div class="pill-option">
+                  <input type="radio" name="calc-grade" id="grade-primary" value="primary" checked>
+                  <label for="grade-primary" class="pill-label">
+                    <strong>Primary</strong>
+                    <span style="font-size: 0.8rem; color: var(--color-slate-500);">Grades K–5th</span>
+                  </label>
+                </div>
+
+                <div class="pill-option">
+                  <input type="radio" name="calc-grade" id="grade-middle" value="middle">
+                  <label for="grade-middle" class="pill-label">
+                    <strong>Middle School</strong>
+                    <span style="font-size: 0.8rem; color: var(--color-slate-500);">Grades 6th–8th</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1.25rem; font-size: 1.4rem;">2. State Scholarships &amp; Financial Aid</h3>
+            <div class="form-group">
+              <label for="calc-aid-select" class="form-label">Available Programs</label>
+              <select id="calc-aid-select" class="form-select">
+                <option value="none">Standard Enrollment (No state aid)</option>
+                <option value="goal">Georgia GOAL Tax Credit Scholarship (Avg: -$3,500/yr)</option>
+                <option value="gsns">Georgia Special Needs Scholarship / GSNS (Avg: -$4,500/yr)</option>
+                <option value="multi">Sibling Discount (10% off second child)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-top: 1.5rem;">
+              <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+                <input type="checkbox" id="calc-dyslexia" style="width: 18px; height: 18px; accent-color: var(--color-gold-500);">
+                <span>Include Daily 1-on-1 Certified Orton-Gillingham Dyslexia Tutoring (+$3,800/yr)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Live Results Column -->
+          <div class="tuition-results">
+            <div>
+              <h3>Estimated Investment</h3>
+              <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 0.25rem;">Customized for 2026–2027 Academic Year</p>
+
+              <div class="tuition-breakdown-list">
+                <div class="tuition-row">
+                  <span>Base Academic Tuition:</span>
+                  <strong id="calc-disp-base">$10,400</strong>
+                </div>
+
+                <div class="tuition-row" id="calc-row-dyslexia" style="display: none;">
+                  <span>Orton-Gillingham Tutoring:</span>
+                  <strong id="calc-disp-dyslexia">+$3,800</strong>
+                </div>
+
+                <div class="tuition-row row-discount">
+                  <span>Estimated Scholarship / Aid:</span>
+                  <strong id="calc-disp-aid">$0</strong>
+                </div>
+              </div>
+
+              <div class="tuition-total-box">
+                <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.8);">Estimated Net Annual Tuition</span>
+                <div class="tuition-total-amount" id="calc-disp-annual">$10,400</div>
+                <span style="font-size: 0.95rem; color: rgba(255,255,255,0.9);">Or approximately <strong id="calc-disp-monthly" style="color: var(--color-gold-400);">$1,040</strong> / month (10-month plan)</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <button class="btn btn-primary btn-tour-trigger" style="width: 100%; margin-bottom: 0.75rem;">Apply for Aid &amp; Admissions</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. GEORGIA SCHOLARSHIPS EXPLAINED -->
+  <section class="section-padding" style="background-color: var(--color-cream-100);" id="goal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-green">State Financial Assistance</span>
+        <h2>Making Exceptional Education Affordable</h2>
+        <p class="lead">Savannah River Academy actively participates in all major State of Georgia tax-credit tuition assistance programs.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: var(--color-gold-100); color: var(--color-gold-600);">⭐</div>
+          <h3>Georgia GOAL Scholarship</h3>
+          <p>The Georgia GOAL Scholarship Program allows Georgia taxpayers to redirect their state tax dollars to provide private school tuition scholarships for qualified students transferring from public schools or entering Pre-K/Kindergarten.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: var(--color-forest-100); color: var(--color-forest-600);">📋</div>
+          <h3>Georgia Special Needs Scholarship (GSNS)</h3>
+          <p>Students with an Individualized Education Plan (IEP), 504 Plan, or eligible diagnosis (including Dyslexia) may receive direct state scholarship vouchers toward SRA tuition and specialized dyslexia tutoring.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: var(--color-navy-100); color: var(--color-navy-700);">🤝</div>
+          <h3>Need-Based Tuition Assistance</h3>
+          <p>Through our private SRA Annual Fund and generous community donors, we provide supplemental need-based financial aid to ensure socioeconomic diversity in our school family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/footer_logo.png" alt="Savannah River Academy Crest">
+          <p>A premier non-profit independent day school cultivating curious, confident, and compassionate learners in Grovetown, GA.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About SRA</a>
+            <a href="academics.html">Academics</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="campus-life.html">Campus Life</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Key Documents</h4>
+          <div class="footer-links">
+            <a href="assets/docs/SRA-Calendar-2026-2027.pdf" target="_blank">2026–2027 School Calendar (PDF)</a>
+            <a href="assets/docs/Family-Handbook.pdf" target="_blank">Family Handbook (PDF)</a>
+            <a href="assets/docs/Family-Portal-Guide.pdf" target="_blank">FACTS Portal Setup Guide (PDF)</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Admissions Office</h4>
+          <div style="font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.7);">
+            213 S Old Belair Rd<br>Grovetown, GA 30813<br>
+            📞 (706) 863-7773<br>
+            ✉️ admissions@savannahriveracademy.org
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Savannah River Academy. All Rights Reserved.</div>
+        <div>Accredited by Cognia &amp; GADOE • Candid Gold 2024 Seal</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOUR MODAL -->
+  <dialog class="modal-dialog" id="tour-modal" aria-labelledby="modal-heading">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="section-badge" style="background: rgba(212,154,61,0.25); color: var(--color-gold-400); margin-bottom: 0.5rem;">Admissions Office</span>
+          <h3 id="modal-heading">Schedule a Private Campus Tour</h3>
+          <p>Experience our 8:1 classrooms, meet our teachers, and see learning in action.</p>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Tour Request Form">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="tour-form">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="tour-name" class="form-label">Parent / Guardian Name *</label>
+              <input type="text" id="tour-name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="tour-email" class="form-label">Email Address *</label>
+              <input type="email" id="tour-email" class="form-input" required>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="tour-phone" class="form-label">Phone Number *</label>
+              <input type="tel" id="tour-phone" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="tour-grade" class="form-label">Child's Grade Level *</label>
+              <select id="tour-grade" class="form-select" required>
+                <option value="">Select Grade Level...</option>
+                <option value="nest">The Nest (Pre-K)</option>
+                <option value="k-2">Primary (K–2nd)</option>
+                <option value="3-5">Elementary (3rd–5th)</option>
+                <option value="6-8">Middle School (6th–8th)</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Tour Request</button>
+        </form>
+        <div id="tour-success-message" style="display: none; text-align: center; padding: 2rem;">
+          <h3>Thank You!</h3>
+          <p>Our admissions director will contact you promptly to finalize your date.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
