@@ -39,10 +39,12 @@ function initMobileDrawer() {
   const openBtn = document.getElementById('drawer-open');
   const closeBtn = document.getElementById('drawer-close');
   const sheet = drawer ? drawer.querySelector('.Drawer-sheet') : null;
+  let previouslyFocusedElement = null;
 
   if (!drawer || !openBtn) return;
 
   function openDrawer() {
+    previouslyFocusedElement = document.activeElement;
     drawer.showModal();
     openBtn.setAttribute('aria-expanded', 'true');
     // Lock background scrolling
@@ -53,6 +55,9 @@ function initMobileDrawer() {
     drawer.close();
     openBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    if (previouslyFocusedElement && typeof previouslyFocusedElement.focus === 'function') {
+      previouslyFocusedElement.focus();
+    }
   }
 
   openBtn.addEventListener('click', openDrawer);
@@ -86,10 +91,12 @@ function initTourModal() {
   const closeBtn = document.getElementById('modal-close-btn');
   const form = document.getElementById('tour-form');
   const successBox = document.getElementById('tour-success-message');
+  let previouslyFocusedElement = null;
 
   if (!modal) return;
 
-  function openModal() {
+  function openModal(trigger) {
+    previouslyFocusedElement = trigger || document.activeElement;
     modal.showModal();
     document.body.style.overflow = 'hidden';
     const firstInput = modal.querySelector('input, select');
@@ -99,11 +106,14 @@ function initTourModal() {
   function closeModal() {
     modal.close();
     document.body.style.overflow = '';
+    if (previouslyFocusedElement && typeof previouslyFocusedElement.focus === 'function') {
+      previouslyFocusedElement.focus();
+    }
   }
 
   openTriggers.forEach(btn => btn.addEventListener('click', (e) => {
     e.preventDefault();
-    openModal();
+    openModal(btn);
   }));
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
